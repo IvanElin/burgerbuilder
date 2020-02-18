@@ -2,6 +2,7 @@
     width: 100%;
     padding: .5rem;
     box-sizing: border-box;
+    position: relative;
 }
 
 .Label {
@@ -26,4 +27,17 @@
 .InputElem:focus {
     /* outline: none; */
     background-color: #eee;
+}
+
+.Invalid {
+    border: 1px solid red;
+    background-color: rgb(248, 160, 150);
+}
+
+.ErrorMessage {
+    color: red;
+    display: block;
+    position: absolute;
+    bottom: -.5rem;
+    font-size: .75rem;
 }
