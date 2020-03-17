@@ -16,21 +16,11 @@ import * as bugerBuilderActions from '../../store/actions/index';
 class BurgerBuilder extends Component {
 
     state = {
-        purchasing: false,
-        loading: false,
-        error: false
+        purchasing: false
     }
 
     componentDidMount() {
-        // axios.get('https://react-burger-app-51433.firebaseio.com/ingridients.json')
-        //     .then(response => {
-        //         this.setState({
-        //             ingredients: response.data
-        //         });
-        //     })
-        //     .catch(error => {
-        //         this.setState({error: true})
-        //     });
+        this.props.onInitIngredients();
     }
 
     updatePurchaseState (ingredients) {
@@ -89,10 +79,6 @@ class BurgerBuilder extends Component {
                 purchaseContinued={this.purchaseContinueHandler} />
         }
 
-        if (this.state.loading) {
-            orderSummary = <Spinner/>
-        }
-
         return (
             <ReactAux>
                 <Modal show={this.state.purchasing} modalClosed={this.purchaseCancelHandler}>
@@ -107,14 +93,16 @@ class BurgerBuilder extends Component {
 const mapStateToProps = state => {
     return {
         ings: state.ingredients,
-        price: state.totalPrice
+        price: state.totalPrice,
+        error: state.error
     }
 }
 
 const mapDispatchToProps = dispatch => {
     return {
         onIngredientAdded: (ingName) => dispatch(bugerBuilderActions.addIngredient(ingName)),
-        onIngredientRemoved: (ingName) => dispatch(bugerBuilderActions.removeIngredient(ingName))
+        onIngredientRemoved: (ingName) => dispatch(bugerBuilderActions.removeIngredient(ingName)),
+        onInitIngredients: () => dispatch(bugerBuilderActions.initIngredients())
     }
 }
 
