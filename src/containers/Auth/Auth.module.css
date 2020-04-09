@@ -13,6 +13,11 @@
     flex-direction: column;
 }
 
+.Auth h1 {
+    font-size: 1.2rem;
+    color: #000;
+}
+
 @media (min-width: 600px) {
     .Auth {
         width: 500px;
