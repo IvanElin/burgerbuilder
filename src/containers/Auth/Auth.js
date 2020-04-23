@@ -7,6 +7,7 @@ import Input from '../../components/UI/Input/Input';
 import Spinner from '../../components/UI/Spinner/Spinner';
 import Button from '../../components/UI/Button/Button';
 import * as actions from '../../store/actions/index';
+import { updateObject } from '../../shared/utility';
 
 class Auth extends Component {
     state = {
