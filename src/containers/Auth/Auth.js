@@ -135,13 +135,13 @@ class Auth extends Component {
 
         return (
             <div className={classes.Auth}>
-                <h1>{this.state.isSignup ? 'SIGN UP' : 'SIGN IN'}</h1>
+                <h1>{this.state.isSignup ? 'Sign In' : 'Sign Up'}</h1>
                 { Redir }
                 {errorMessage}
                 {form}
             <Button
                 clicked={this.switchAuthMethodHandler} 
-                btnType="Danger">SWITCH TO {this.state.isSignup ? 'SIGNIN' : 'SIGNUP'}</Button>  
+                btnType="Danger">Switch to {this.state.isSignup ? 'Sign Up' : 'Sign In'}</Button>  
             </div>
         );
     }

@@ -14,9 +14,9 @@ const sideDrawer = ( props ) => {
     return (
         <ReactAux>
             <Backdrop show={props.open} clicked={props.closed}/>
-            <div className={attachedClasses.join(' ')}>
-                <Logo logoType='Sidebar'/>
-                <nav>
+            <div className={attachedClasses.join(' ')} onClick={props.closed} >
+                <Logo className={classes.Logo} logoType='Sidebar'/>
+                <nav className={classes.Navigation}>
                     <NavigationItems isAuth={props.isAuth} />
                 </nav>
             </div>

@@ -8,6 +8,7 @@
     padding: 10px;
     margin: 10px;
     font-weight: bold;
+    transition: all .3s;
 }
 
 .Button:disabled {
@@ -24,6 +25,14 @@
     color: #5C9210;
 }
 
+.Success:hover {
+    color: rgb(125, 179, 49);
+}
+
 .Danger {
     color: #944317;
+}
+
+.Danger:hover {
+    color: #cc7b4f;
 }
