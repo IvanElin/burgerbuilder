@@ -32,7 +32,6 @@ class BurgerBuilder extends Component {
         return sum > 0;
     }
 
-
     purchaseHandler = () => {
        if (this.props.isAuth) {
          this.setState({purchasing: true}) 
